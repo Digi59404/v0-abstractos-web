@@ -30,7 +30,7 @@ const channels: Channel[] = [
     description: 'Share screenshots, show off your setup, and discuss news and releases with fellow users.',
     href: links.reddit,
     icon: MessageCircleIcon,
-    tone: 'bg-brand-coral/15 text-brand-coral',
+    tone: 'bg-accent text-accent-foreground',
     tag: 'Discussion',
   },
   {
@@ -39,7 +39,7 @@ const channels: Channel[] = [
     description: 'Real-time chat with contributors and maintainers. Perfect for quick questions and dev talk.',
     href: links.irc,
     icon: HashIcon,
-    tone: 'bg-brand-blue/15 text-brand-blue',
+    tone: 'bg-accent text-accent-foreground',
     tag: 'Live chat',
   },
   {
@@ -48,7 +48,7 @@ const channels: Channel[] = [
     description: 'Long-form help, feature requests and design proposals — searchable and organised by topic.',
     href: links.forums,
     icon: MessagesSquareIcon,
-    tone: 'bg-brand-sun/25 text-foreground',
+    tone: 'bg-accent text-accent-foreground',
     tag: 'Support',
   },
   {
@@ -57,7 +57,7 @@ const channels: Channel[] = [
     description: 'A modern, federated chat bridged with our IRC channel. Join from any Matrix client.',
     href: links.matrix,
     icon: RadioTowerIcon,
-    tone: 'bg-brand-teal/20 text-foreground',
+    tone: 'bg-accent text-accent-foreground',
     tag: 'Live chat',
   },
   {
@@ -66,7 +66,7 @@ const channels: Channel[] = [
     description: 'Source code, issues, merge requests and the public design repository all live here.',
     href: links.gitlab,
     icon: GitMergeIcon,
-    tone: 'bg-brand-coral/15 text-brand-coral',
+    tone: 'bg-accent text-accent-foreground',
     tag: 'Code',
   },
   {
@@ -75,7 +75,7 @@ const channels: Channel[] = [
     description: 'Follow for release announcements, design sneak peeks and community highlights.',
     href: links.mastodon,
     icon: MessageCircleIcon,
-    tone: 'bg-brand-blue/15 text-brand-blue',
+    tone: 'bg-accent text-accent-foreground',
     tag: 'Updates',
   },
 ]

@@ -29,6 +29,7 @@
   --color-input: var(--input);
   --color-border: var(--border);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent: var(--accent);
   --color-muted-foreground: var(--muted-foreground);
@@ -52,48 +53,51 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Palette drawn from the AbstractOS concept designs: Turbine blue accent,
-   coral from the brand smile, desert-dune sun, and ocean teal wallpapers. */
+/* Palette sampled from the AbstractOS screenshots: warm off-white glass
+   surfaces, desert dune and sand tones, misty grays, and a single soft
+   Turbine/folder blue accent. Token names are kept for compatibility:
+   coral = dune tan, sun = pale sand, teal = mist. */
 :root {
   color-scheme: light;
-  --brand-blue: oklch(0.62 0.2 258);
-  --brand-coral: oklch(0.66 0.21 12);
-  --brand-sun: oklch(0.82 0.15 78);
-  --brand-teal: oklch(0.74 0.12 195);
-  --brand-sand: oklch(0.94 0.03 80);
+  --brand-blue: oklch(0.63 0.13 255);
+  --brand-coral: oklch(0.7 0.085 65);
+  --brand-sun: oklch(0.87 0.05 80);
+  --brand-teal: oklch(0.84 0.025 240);
+  --brand-sand: oklch(0.955 0.014 80);
 
-  --background: oklch(0.99 0.004 250);
-  --foreground: oklch(0.24 0.03 260);
+  --background: oklch(0.985 0.004 85);
+  --foreground: oklch(0.23 0.008 260);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.03 260);
+  --card-foreground: oklch(0.23 0.008 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.03 260);
-  --primary: oklch(0.6 0.2 258);
+  --popover-foreground: oklch(0.23 0.008 260);
+  --primary: oklch(0.22 0.008 260);
   --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.95 0.012 250);
-  --secondary-foreground: oklch(0.28 0.03 260);
-  --muted: oklch(0.96 0.008 250);
-  --muted-foreground: oklch(0.5 0.025 260);
-  --accent: oklch(0.95 0.03 258);
-  --accent-foreground: oklch(0.42 0.17 258);
-  --destructive: oklch(0.6 0.22 20);
-  --border: oklch(0.91 0.012 250);
-  --input: oklch(0.91 0.012 250);
-  --ring: oklch(0.62 0.2 258);
+  --secondary: oklch(0.955 0.006 85);
+  --secondary-foreground: oklch(0.26 0.008 260);
+  --muted: oklch(0.96 0.006 85);
+  --muted-foreground: oklch(0.5 0.01 260);
+  --accent: oklch(0.95 0.018 250);
+  --accent-foreground: oklch(0.42 0.11 255);
+  --destructive: oklch(0.58 0.2 25);
+  --success: oklch(0.6 0.14 150);
+  --border: oklch(0.91 0.006 85);
+  --input: oklch(0.91 0.006 85);
+  --ring: oklch(0.63 0.13 255);
   --chart-1: var(--brand-blue);
   --chart-2: var(--brand-coral);
   --chart-3: var(--brand-sun);
   --chart-4: var(--brand-teal);
-  --chart-5: oklch(0.55 0.03 260);
+  --chart-5: oklch(0.55 0.01 260);
   --radius: 0.75rem;
-  --sidebar: oklch(0.98 0.004 250);
-  --sidebar-foreground: oklch(0.24 0.03 260);
-  --sidebar-primary: oklch(0.6 0.2 258);
+  --sidebar: oklch(0.975 0.005 85);
+  --sidebar-foreground: oklch(0.23 0.008 260);
+  --sidebar-primary: oklch(0.22 0.008 260);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.95 0.03 258);
-  --sidebar-accent-foreground: oklch(0.42 0.17 258);
-  --sidebar-border: oklch(0.91 0.012 250);
-  --sidebar-ring: oklch(0.62 0.2 258);
+  --sidebar-accent: oklch(0.95 0.018 250);
+  --sidebar-accent-foreground: oklch(0.42 0.11 255);
+  --sidebar-border: oklch(0.91 0.006 85);
+  --sidebar-ring: oklch(0.63 0.13 255);
 }
 
 @layer base {
@@ -118,8 +122,8 @@
   background-image: linear-gradient(
     100deg,
     var(--brand-blue),
-    var(--brand-coral) 55%,
-    var(--brand-sun)
+    oklch(0.6 0.09 230) 50%,
+    var(--brand-coral)
   );
   background-clip: text;
   color: transparent;

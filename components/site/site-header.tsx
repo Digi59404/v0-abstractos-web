@@ -27,7 +27,7 @@ export function SiteHeader() {
           <Logo />
         </Link>
 
-        <nav aria-label="Main" className="hidden md:block">
+        <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {navItems.map((item) => (
               <li key={item.href}>
@@ -53,7 +53,7 @@ export function SiteHeader() {
           </Link>
 
           <Sheet>
-            <SheetTrigger render={<Button variant="ghost" size="icon-lg" className="md:hidden" />}>
+            <SheetTrigger render={<Button variant="ghost" size="icon-lg" className="lg:hidden" />}>
               <MenuIcon />
               <span className="sr-only">Open menu</span>
             </SheetTrigger>

@@ -16,42 +16,42 @@ const props = [
     title: 'Truly convergent',
     description:
       'The same apps, files and settings flow between phone, tablet and desktop. Dock your phone and it becomes a full workstation.',
-    tone: 'bg-brand-blue/15 text-brand-blue',
+    tone: 'bg-accent text-accent-foreground',
   },
   {
     icon: SparklesIcon,
     title: 'Beautiful by default',
     description:
       'Light, airy windows, thoughtful typography and a calm dock. No theming marathon required on day one.',
-    tone: 'bg-brand-coral/15 text-brand-coral',
+    tone: 'bg-accent text-accent-foreground',
   },
   {
     icon: LockKeyholeIcon,
     title: 'Private by design',
     description:
       'Fingerprint unlock, a private-first browser in Turbine, and no telemetry you did not ask for.',
-    tone: 'bg-brand-teal/20 text-foreground',
+    tone: 'bg-accent text-accent-foreground',
   },
   {
     icon: SlidersHorizontalIcon,
     title: 'Your device, your choice',
     description:
       'Run open or closed source software, your call. We protect your right to choose instead of choosing for you.',
-    tone: 'bg-brand-sun/25 text-foreground',
+    tone: 'bg-accent text-accent-foreground',
   },
   {
     icon: TerminalIcon,
     title: 'Room for power users',
     description:
       'A real Linux underneath. Drop into a terminal, flash your own builds, or develop natively with Vala and GTK.',
-    tone: 'bg-brand-blue/15 text-brand-blue',
+    tone: 'bg-accent text-accent-foreground',
   },
   {
     icon: LayersIcon,
     title: 'Apps that adapt',
     description:
       'Files, Turbine, Marker and the Exposition app store are designed to reflow gracefully at every size.',
-    tone: 'bg-brand-coral/15 text-brand-coral',
+    tone: 'bg-accent text-accent-foreground',
   },
 ]
 

@@ -12,7 +12,7 @@ export function DesktopFrame({ src, alt, className, priority }: FrameProps) {
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-2xl border border-border/80 bg-card p-1.5 shadow-2xl shadow-brand-blue/15',
+        'overflow-hidden rounded-2xl border border-border/80 bg-card p-1.5 shadow-2xl shadow-foreground/10',
         className
       )}
     >
@@ -33,7 +33,7 @@ export function TabletFrame({ src, alt, className }: FrameProps) {
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-[1.75rem] border-[6px] border-foreground/90 bg-foreground shadow-2xl shadow-brand-teal/20',
+        'overflow-hidden rounded-[1.75rem] border-[6px] border-foreground/90 bg-foreground shadow-2xl shadow-foreground/15',
         className
       )}
     >
@@ -53,7 +53,7 @@ export function PhoneFrame({ src, alt, className, priority }: FrameProps) {
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-[2.25rem] border-[6px] border-foreground/90 bg-foreground shadow-2xl shadow-brand-coral/25',
+        'overflow-hidden rounded-[2.25rem] border-[6px] border-foreground/90 bg-foreground shadow-2xl shadow-foreground/15',
         className
       )}
     >
