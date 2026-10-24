@@ -1,45 +1,49 @@
 import Link from 'next/link'
 import { Separator } from '@/components/ui/separator'
 import { Logo } from '@/components/site/logo'
+import { LocaleSwitcher } from '@/components/i18n/locale-switcher'
+import { format } from '@/i18n/format'
+import { getI18n } from '@/i18n/server'
 import { links, release } from '@/lib/site'
 
-const columns = [
-  {
-    title: 'Product',
-    items: [
-      { label: 'Download', href: '/download' },
-      { label: 'Screenshots', href: '/#screenshots' },
-      { label: 'Release notes', href: links.releases },
-    ],
-  },
-  {
-    title: 'Project',
-    items: [
-      { label: 'Our Ethos', href: '/ethos' },
-      { label: 'Roadmap', href: '/ethos#roadmap' },
-      { label: 'Design repository', href: links.designs },
-    ],
-  },
-  {
-    title: 'Community',
-    items: [
-      { label: 'Reddit', href: links.reddit },
-      { label: 'IRC', href: links.irc },
-      { label: 'Forums', href: links.forums },
-      { label: 'GitLab', href: links.gitlab },
-    ],
-  },
-]
-
 export function SiteFooter() {
+  const { m } = getI18n()
+  const f = m.footer
+
+  const columns = [
+    {
+      title: f.product,
+      items: [
+        { label: f.links.download, href: '/download' },
+        { label: f.links.screenshots, href: '/#screenshots' },
+        { label: f.links.releaseNotes, href: links.releases },
+      ],
+    },
+    {
+      title: f.project,
+      items: [
+        { label: f.links.ethos, href: '/ethos' },
+        { label: f.links.roadmap, href: '/ethos#roadmap' },
+        { label: f.links.designs, href: links.designs },
+      ],
+    },
+    {
+      title: f.community,
+      items: [
+        { label: 'Reddit', href: links.reddit },
+        { label: 'IRC', href: links.irc },
+        { label: f.links.forums, href: links.forums },
+        { label: 'GitLab', href: links.gitlab },
+      ],
+    },
+  ]
+
   return (
     <footer className="border-t bg-muted/40">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-[1.4fr_repeat(3,1fr)]">
         <div className="flex flex-col gap-4">
           <Logo />
-          <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-            A user-first, convergent Linux operating system for every screen you own.
-          </p>
+          <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">{f.tagline}</p>
         </div>
         {columns.map((col) => (
           <div key={col.title} className="flex flex-col gap-3">
@@ -48,7 +52,7 @@ export function SiteFooter() {
               {col.items.map((item) => {
                 const external = item.href.startsWith('http')
                 return (
-                  <li key={item.label}>
+                  <li key={item.href}>
                     <Link
                       href={item.href}
                       {...(external ? { target: '_blank', rel: 'noreferrer' } : {})}
@@ -64,14 +68,12 @@ export function SiteFooter() {
         ))}
       </div>
       <Separator />
-      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
-        <p>
-          {'© '}
-          {new Date().getFullYear()} Abstract Studio. Linux is a registered trademark of Linus Torvalds.
-        </p>
-        <p>
-          AbstractOS {release.version} {release.codename} · {release.channel}
-        </p>
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <p>{format(f.legal, { year: new Date().getFullYear() })}</p>
+        <div className="flex items-center gap-4">
+          <p>{format(f.build, { version: release.version, codename: release.codename, channel: m.release.channel })}</p>
+          <LocaleSwitcher />
+        </div>
       </div>
     </footer>
   )

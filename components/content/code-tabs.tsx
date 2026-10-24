@@ -1,5 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { CopyButton } from '@/components/download/copy-button'
+import { format } from '@/i18n/format'
+import { getI18n } from '@/i18n/server'
 import { CodeSurface, highlight } from '@/components/content/code-block'
 
 export async function CodeTabs({ tabs }: { tabs: { label: string; lang: string; code: string }[] }) {
@@ -21,7 +23,7 @@ export async function CodeTabs({ tabs }: { tabs: { label: string; lang: string; 
       {rendered.map((tab) => (
         <TabsContent key={tab.label} value={tab.label} className="relative">
           <div className="absolute top-2 right-2">
-            <CopyButton value={tab.code} label={`Copy ${tab.label} code`} />
+            <CopyButton value={tab.code} label={format(getI18n().m.content.copyCode, { name: tab.label })} />
           </div>
           <CodeSurface html={tab.html} />
         </TabsContent>

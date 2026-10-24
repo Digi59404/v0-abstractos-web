@@ -1,0 +1,625 @@
+{
+  "meta": {
+    "title": "AbstractOS — One Linux OS for phone, tablet and desktop",
+    "titleTemplate": "%s · AbstractOS",
+    "description": "AbstractOS is a user-first, convergent Linux operating system that adapts to your phone, tablet and desktop. Beautiful by default, open by design.",
+    "ogDescription": "One Linux OS for every screen you own.",
+    "keywords": [
+      "AbstractOS",
+      "Linux",
+      "convergent OS",
+      "mobile Linux",
+      "open source operating system"
+    ]
+  },
+  "release": {
+    "channel": "Alpha"
+  },
+  "common": {
+    "language": "Language",
+    "opensInNewTab": "(opens in a new tab)",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copyCode": "Copy code",
+    "supported": "Supported",
+    "notSupported": "Not supported",
+    "close": "Close",
+    "breadcrumb": "Breadcrumb",
+    "pagination": {
+      "label": "Pagination",
+      "previous": "Previous",
+      "next": "Next",
+      "previousLabel": "Go to previous page",
+      "nextLabel": "Go to next page"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "ethos": "Ethos",
+    "devices": "Devices",
+    "docs": "Docs",
+    "blog": "Blog",
+    "community": "Community",
+    "download": "Download",
+    "homeLabel": "AbstractOS home",
+    "mainLabel": "Main",
+    "mobileLabel": "Mobile",
+    "openMenu": "Open menu",
+    "cta": "Get AbstractOS"
+  },
+  "footer": {
+    "tagline": "A user-first, convergent Linux operating system for every screen you own.",
+    "product": "Product",
+    "project": "Project",
+    "community": "Community",
+    "links": {
+      "download": "Download",
+      "screenshots": "Screenshots",
+      "releaseNotes": "Release notes",
+      "ethos": "Our Ethos",
+      "roadmap": "Roadmap",
+      "designs": "Design repository",
+      "forums": "Forums"
+    },
+    "legal": "© {year} Abstract Studio. Linux is a registered trademark of Linus Torvalds.",
+    "build": "AbstractOS {version} {codename} · {channel}"
+  },
+  "cta": {
+    "title": "Help shape the future of personal computing",
+    "description": "AbstractOS is in alpha. Try it in a VM, flash it to a USB drive, and tell us what you think.",
+    "download": "Download the alpha",
+    "community": "Join the community"
+  },
+  "home": {
+    "hero": {
+      "badge": "{channel} {version} “{codename}” is here",
+      "title": "One OS. <accent>Every screen.</accent>",
+      "description": "AbstractOS is a user-first Linux operating system that converges across your phone, tablet and desktop — friendly enough for everyone, open enough for experts.",
+      "download": "Download AbstractOS",
+      "ethos": "Read our ethos",
+      "desktopAlt": "AbstractOS desktop showing the Files app in light mode over a desert wallpaper",
+      "phoneAlt": "AbstractOS on a phone with the home screen and app grid"
+    },
+    "values": {
+      "eyebrow": "Why AbstractOS",
+      "title": "A first-class alternative, built around you",
+      "description": "We put the user first in every decision — while keeping the door wide open for advanced users.",
+      "items": {
+        "convergent": {
+          "title": "Truly convergent",
+          "description": "The same apps, files and settings flow between phone, tablet and desktop. Dock your phone and it becomes a full workstation."
+        },
+        "beautiful": {
+          "title": "Beautiful by default",
+          "description": "Light, airy windows, thoughtful typography and a calm dock. No theming marathon required on day one."
+        },
+        "private": {
+          "title": "Private by design",
+          "description": "Fingerprint unlock, a private-first browser in Turbine, and no telemetry you did not ask for."
+        },
+        "choice": {
+          "title": "Your device, your choice",
+          "description": "Run open or closed source software, your call. We protect your right to choose instead of choosing for you."
+        },
+        "power": {
+          "title": "Room for power users",
+          "description": "A real Linux underneath. Drop into a terminal, flash your own builds, or develop natively with Vala and GTK."
+        },
+        "adapt": {
+          "title": "Apps that adapt",
+          "description": "Files, Turbine, Marker and the Exposition app store are designed to reflow gracefully at every size."
+        }
+      }
+    },
+    "screenshots": {
+      "eyebrow": "Screenshots",
+      "title": "See it in action",
+      "description": "Straight from the AbstractOS design repository — the desktop experience we are building.",
+      "items": {
+        "files": {
+          "label": "Files",
+          "alt": "Files app showing recent documents and folders",
+          "caption": "Files — recent, cloud, documents and downloads in one calm view."
+        },
+        "turbine": {
+          "label": "Turbine",
+          "alt": "Turbine internet browser start page with pinned sites over an ocean wallpaper",
+          "caption": "Turbine — a fast, private browser with a pinned start page."
+        },
+        "exposition": {
+          "label": "Exposition",
+          "alt": "Exposition app store showing featured and popular apps",
+          "caption": "Exposition — discover apps, from indie gems to everyday essentials."
+        },
+        "dark": {
+          "label": "Dark mode",
+          "alt": "Files app in dark mode",
+          "caption": "Dark mode — every first-party app, tuned for the night."
+        },
+        "login": {
+          "label": "Lock screen",
+          "alt": "AbstractOS lock screen with fingerprint unlock",
+          "caption": "Lock screen — unlock in a touch with fingerprint support."
+        },
+        "installer": {
+          "label": "Installer",
+          "alt": "AbstractOS installer showing installation type options",
+          "caption": "Installer — erase and install, or partition exactly how you like."
+        }
+      }
+    },
+    "convergence": {
+      "eyebrow": "Convergence",
+      "title": "Shapes that change. <accent>An OS that doesn't.</accent>",
+      "description": "AbstractOS reshapes its interface to fit the device in your hand — without ever asking you to learn a new system.",
+      "phoneAlt": "AbstractOS phone home screen",
+      "tabletAlt": "AbstractOS tablet with Files and notes in split view",
+      "desktopAlt": "AbstractOS desktop with the Turbine browser",
+      "modes": {
+        "phone": {
+          "title": "Phone",
+          "text": "A touch-first home screen with gestures and a frosted dock."
+        },
+        "tablet": {
+          "title": "Tablet",
+          "text": "Side-by-side windows that snap into a productive split view."
+        },
+        "desktop": {
+          "title": "Desktop",
+          "text": "Free-floating windows, a full dock and keyboard-driven workflows."
+        }
+      }
+    }
+  },
+  "ethos": {
+    "meta": {
+      "title": "Ethos",
+      "description": "AbstractOS is a user-first operating system. Learn the principles that guide every decision we make — and our commitment to your freedom to choose."
+    },
+    "eyebrow": "Our ethos",
+    "title": "Put the user first. <accent>Protect their right to choose.</accent>",
+    "quote": "“The devices you own should be able to run the software you choose. The software you choose can be open or closed source — the choice is yours. It is not our job to decide or cast judgement; it's our job to protect your right to choose.”",
+    "quoteSource": "— The AbstractOS mission statement",
+    "principles": {
+      "eyebrow": "Principles",
+      "title": "Six ideas that shape AbstractOS",
+      "description": "Our ethos is simple to say and hard to live up to. These are the principles we hold ourselves to.",
+      "items": [
+        {
+          "title": "User first — not user always right",
+          "body": "Every decision starts with the person using the device. That means sometimes saying no to a feature so the whole experience stays clear, fast and dependable."
+        },
+        {
+          "title": "Approachable for everyone",
+          "body": "We design for the average, non-technical person first. If your parents can set it up and love it, we have done our job."
+        },
+        {
+          "title": "Never at the expense of experts",
+          "body": "Catering to newcomers does not mean limiting power users. A real Linux system, real terminal and real freedom are always one step away."
+        },
+        {
+          "title": "A first-class alternative",
+          "body": "We aim to stand shoulder-to-shoulder with Google, Apple and Microsoft — polished, consistent and ready for daily life on any device."
+        },
+        {
+          "title": "Freedom grows with us",
+          "body": "As AbstractOS grows, we will invest in user freedom — including open-source firmware for devices, alongside closed options if you want them."
+        },
+        {
+          "title": "Built in the open",
+          "body": "Our designs, roadmap and code live publicly on GitLab. Anyone can follow along, give feedback and contribute."
+        }
+      ]
+    },
+    "roadmap": {
+      "eyebrow": "Roadmap",
+      "title": "Where we are headed",
+      "description": "Ethos only matters if it ships. Here is what we are building next, straight from our public roadmap.",
+      "status": {
+        "inProgress": "In progress",
+        "planned": "Planned"
+      },
+      "milestones": {
+        "alpha-0-1": {
+          "title": "Alpha 0.1",
+          "items": [
+            "A desktop environment built on Wingpanel, LightDM, Gala and Dock",
+            "x64 and 32-bit images you can run in a virtual machine",
+            "A GTK 3 / GTK 4 theme for a consistent look",
+            "Marker (markdown notes), Register (text editor) and Review (quick file previews)",
+            "Vala Welder MVP and a documented Vala development process",
+            "CI/CD pipelines for AppImages and Alpine APKs, plus an Alpine repository"
+          ]
+        },
+        "alpha-0-2": {
+          "title": "Alpha 0.2",
+          "items": [
+            "ARM build process producing flashable .img files",
+            "A finished installer and a guided first-run experience",
+            "Testing pipelines for AbstractOS and Vala applications",
+            "Development guidelines for what makes an “AbstractOS application”"
+          ]
+        },
+        "alpha-0-3": {
+          "title": "Alpha 0.3",
+          "items": [
+            "ARM, x86 and 32-bit .img and .iso images for real hardware",
+            "rEFInd installed on EFI/GPT machines",
+            "GRUB installed on non-EFI/GPT machines"
+          ]
+        }
+      }
+    }
+  },
+  "community": {
+    "meta": {
+      "title": "Community",
+      "description": "Join the AbstractOS community on Reddit, IRC, our forums, Matrix and GitLab. Ask questions, share feedback and help build the OS."
+    },
+    "eyebrow": "Community",
+    "title": "Built by people, <accent>for people.</accent>",
+    "description": "AbstractOS is shaped by everyone who uses it. Find your corner of the community — ask for help, share your setup, or help us design what comes next.",
+    "channels": {
+      "heading": "Community channels",
+      "join": "Join {name}",
+      "items": {
+        "reddit": {
+          "name": "Reddit",
+          "tag": "Discussion",
+          "description": "Share screenshots, show off your setup, and discuss news and releases with fellow users."
+        },
+        "irc": {
+          "name": "IRC",
+          "tag": "Live chat",
+          "description": "Real-time chat with contributors and maintainers. Perfect for quick questions and dev talk."
+        },
+        "forums": {
+          "name": "Forums",
+          "tag": "Support",
+          "description": "Long-form help, feature requests and design proposals — searchable and organised by topic."
+        },
+        "matrix": {
+          "name": "Matrix",
+          "tag": "Live chat",
+          "description": "A modern, federated chat bridged with our IRC channel. Join from any Matrix client."
+        },
+        "gitlab": {
+          "name": "GitLab",
+          "tag": "Code",
+          "description": "Source code, issues, merge requests and the public design repository all live here."
+        },
+        "mastodon": {
+          "name": "Mastodon",
+          "tag": "Updates",
+          "description": "Follow for release announcements, design sneak peeks and community highlights."
+        }
+      }
+    },
+    "contribute": {
+      "eyebrow": "Contribute",
+      "title": "Every contribution counts",
+      "description": "You don't need to be a kernel hacker to help. Our community welcomes designers, writers, testers and developers alike.",
+      "gitlab": "Start on GitLab",
+      "designs": "Browse the designs",
+      "ways": {
+        "code": {
+          "title": "Write code",
+          "text": "Pick up an issue on GitLab — Vala, GTK, shell or CI pipelines."
+        },
+        "design": {
+          "title": "Design",
+          "text": "Propose mockups and icons in the public design repository."
+        },
+        "test": {
+          "title": "Test and report",
+          "text": "Run the alpha in a VM and file clear, reproducible bug reports."
+        },
+        "translate": {
+          "title": "Translate and write",
+          "text": "Help with docs, guides and translations for your language."
+        }
+      }
+    }
+  },
+  "download": {
+    "meta": {
+      "title": "Download",
+      "description": "Download AbstractOS {version} “{codename}” for x64, 32-bit and ARM. Try it in a virtual machine or flash it to a USB drive."
+    },
+    "eyebrow": "{channel} {version} · {codename}",
+    "title": "Get <accent>AbstractOS</accent>",
+    "description": "Free to download, free to use. Pick your architecture, then run it in a virtual machine or write it to a USB drive.",
+    "options": {
+      "label": "Download options",
+      "tabs": {
+        "desktop": "Desktop & VM",
+        "arm": "Mobile & ARM"
+      },
+      "recommended": "Recommended",
+      "comingSoon": "Coming soon",
+      "architecture": "Architecture",
+      "size": "Size",
+      "copyChecksum": "Copy SHA256 checksum for {title}",
+      "downloadImg": "Download .img",
+      "notAvailable": "Not yet available",
+      "alphaWarning": "<strong>AbstractOS is alpha software.</strong> Expect rough edges and missing features. We recommend trying it in a virtual machine before installing on hardware you rely on.",
+      "builds": {
+        "x64": {
+          "title": "64-bit (x64)",
+          "description": "For most modern PCs and laptops, and for running in a virtual machine."
+        },
+        "x86": {
+          "title": "32-bit (x86)",
+          "description": "For older hardware and lightweight virtual machines."
+        },
+        "arm64": {
+          "title": "ARM64",
+          "description": "For phones, tablets and ARM single-board computers. Arriving with Alpha 0.2."
+        }
+      }
+    },
+    "install": {
+      "eyebrow": "Install",
+      "title": "Up and running in three steps",
+      "description": "Prefer a virtual machine? Point GNOME Boxes, VirtualBox or virt-manager at the image and you are done.",
+      "imageAlt": "AbstractOS USB Disk Utility ready to write the image to a flash drive",
+      "steps": [
+        {
+          "title": "Download an image",
+          "text": "Choose the build for your architecture above and verify its SHA256 checksum."
+        },
+        {
+          "title": "Write it to a USB drive",
+          "text": "Use the AbstractOS USB Disk Utility, or any image writer, to flash the .img to a drive of 8 GB or more."
+        },
+        {
+          "title": "Boot and install",
+          "text": "Restart from the USB drive, try the live session, then erase and install — or partition it your way."
+        }
+      ]
+    },
+    "requirements": {
+      "eyebrow": "Requirements",
+      "title": "System requirements",
+      "description": "AbstractOS is lightweight by design, but more headroom makes everything feel smoother.",
+      "columns": {
+        "component": "Component",
+        "minimum": "Minimum",
+        "recommended": "Recommended"
+      },
+      "rows": [
+        {
+          "spec": "Processor",
+          "minimum": "64-bit or 32-bit x86, 1.6 GHz dual-core",
+          "recommended": "64-bit quad-core, 2 GHz+"
+        },
+        {
+          "spec": "Memory",
+          "minimum": "4 GB RAM",
+          "recommended": "8 GB RAM or more"
+        },
+        {
+          "spec": "Storage",
+          "minimum": "20 GB",
+          "recommended": "64 GB SSD"
+        },
+        {
+          "spec": "Display",
+          "minimum": "1024 × 768",
+          "recommended": "1920 × 1080 or touch display"
+        },
+        {
+          "spec": "Boot",
+          "minimum": "BIOS or UEFI",
+          "recommended": "UEFI with GPT"
+        }
+      ]
+    }
+  },
+  "devices": {
+    "meta": {
+      "title": "Devices supported",
+      "description": "Phones, tablets and PCs that run AbstractOS, which hardware features work on each, and devices coming soon."
+    },
+    "eyebrow": "Hardware",
+    "title": "Devices supported",
+    "description": "AbstractOS runs the same system on every device below. Here's what works on each today.",
+    "supported": {
+      "eyebrow": "Available now",
+      "title": "Supported devices",
+      "description": "Stable devices are fully tested each release. Beta devices boot and are usable daily, with some hardware still in progress."
+    },
+    "future": {
+      "eyebrow": "Coming soon",
+      "title": "Future devices",
+      "description": "Ports in progress and devices we would like to support next."
+    },
+    "columns": {
+      "device": "Device",
+      "formFactor": "Form factor",
+      "stage": "Stage",
+      "target": "Target release"
+    },
+    "features": {
+      "screen": "Screen",
+      "touchscreen": "Touchscreen",
+      "camera": "Camera",
+      "gps": "GPS",
+      "wifi": "Wi‑Fi",
+      "lte": "LTE",
+      "gpu": "GPU"
+    },
+    "featureSupported": "{feature} supported",
+    "featureNotSupported": "{feature} not supported",
+    "formFactors": {
+      "phone": "Phone",
+      "tablet": "Tablet",
+      "laptop": "Laptop",
+      "desktop": "Desktop",
+      "singleBoard": "Single-board"
+    },
+    "status": {
+      "stable": "Stable",
+      "beta": "Beta"
+    },
+    "stages": {
+      "bringUp": "Bring-up",
+      "kernelBoots": "Kernel boots",
+      "planned": "Planned",
+      "lookingForPorter": "Looking for porter"
+    },
+    "tbd": "TBD",
+    "port": {
+      "title": "Don't see your device?",
+      "description": "Every supported device started with one person and a USB cable. Help bring AbstractOS to new hardware.",
+      "cta": "Help port AbstractOS",
+      "dialogTitle": "Help port AbstractOS to new hardware",
+      "dialogDescription": "Ports are mostly a kernel and a device configuration. Everything above that is shared, so you can focus on the hardware.",
+      "steps": [
+        {
+          "title": "Say hello",
+          "text": "Join #abstractos-porting on IRC so nobody duplicates work."
+        },
+        {
+          "title": "Create a device config",
+          "text": "Describe the hardware in a small device.toml file."
+        },
+        {
+          "title": "Bring it up",
+          "text": "Boot the kernel, then work through display, touch, radios and camera."
+        }
+      ],
+      "later": "Maybe later",
+      "guide": "Read the porting guide",
+      "docs": "Porting docs"
+    }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog",
+      "description": "Release notes, engineering deep dives, design stories and community updates from the AbstractOS team."
+    },
+    "title": "News from AbstractOS",
+    "description": "Release notes, engineering deep dives, design stories and community updates from the people building AbstractOS.",
+    "pageTitle": "Blog — page {page}",
+    "sectionTitle": "{name} — Blog",
+    "latest": "Latest posts",
+    "postsPage": "Posts — page {page}",
+    "allPosts": "All posts",
+    "topicsNav": "Blog topics",
+    "rssLabel": "RSS feed",
+    "morePosts": "More posts",
+    "older": "Older",
+    "newer": "Newer",
+    "related": "Related posts",
+    "readingTime": {
+      "one": "{count} min read",
+      "other": "{count} min read"
+    },
+    "postCount": {
+      "one": "{count} post",
+      "other": "{count} posts"
+    },
+    "postsBy": {
+      "one": "{count} post by {name}",
+      "other": "{count} posts by {name}"
+    },
+    "rss": {
+      "title": "AbstractOS Blog",
+      "description": "News, release notes and deep dives from the AbstractOS project."
+    },
+    "topics": {
+      "meta": {
+        "title": "Blog topics",
+        "description": "Browse AbstractOS blog posts by topic: releases, engineering, design, convergence and community."
+      },
+      "title": "Topics",
+      "description": "Every post on the AbstractOS blog, organized by what it covers."
+    },
+    "search": {
+      "meta": {
+        "title": "Search the blog"
+      },
+      "title": "Search",
+      "label": "Search the blog",
+      "placeholder": "Search posts…",
+      "filterByTopic": "Filter by topic",
+      "anyTopic": "Any topic",
+      "results": {
+        "one": "{count} result",
+        "other": "{count} results"
+      },
+      "resultsForQuery": {
+        "one": "{count} result for {query}",
+        "other": "{count} results for {query}"
+      },
+      "resultsInTopic": {
+        "one": "{count} result in {topic}",
+        "other": "{count} results in {topic}"
+      },
+      "resultsForQueryInTopic": {
+        "one": "{count} result for {query} in {topic}",
+        "other": "{count} results for {query} in {topic}"
+      },
+      "emptyTitle": "No posts found",
+      "emptyDescription": "Try a different keyword or clear the topic filter.",
+      "back": "Back to all posts"
+    }
+  },
+  "content": {
+    "callout": {
+      "note": "Note",
+      "tip": "Tip",
+      "warning": "Warning"
+    },
+    "shortcut": "Shortcut",
+    "action": "Action",
+    "copyCode": "Copy {name} code",
+    "toc": {
+      "label": "Table of contents",
+      "title": "On this page"
+    },
+    "diagram": {
+      "label": "Diagram",
+      "loading": "Rendering diagram"
+    }
+  },
+  "docs": {
+    "meta": {
+      "title": "Documentation",
+      "description": "User and developer documentation for AbstractOS: installation, apps, settings, app development and hardware porting."
+    },
+    "eyebrow": "Documentation",
+    "title": "Learn AbstractOS",
+    "description": "Guides for everyday use and for building on the platform. Press <kbd>⌘K</kbd> to search.",
+    "browseSections": {
+      "one": "Browse {count} section",
+      "other": "Browse {count} sections"
+    },
+    "breadcrumbRoot": "Docs",
+    "guideBadge": {
+      "users": "User guide",
+      "developers": "Developer guide"
+    },
+    "groupMetaTitle": "{group} — {section}",
+    "lastUpdated": "Last updated <date></date>",
+    "editPage": "Edit this page on GitLab",
+    "menu": "Menu",
+    "sidebar": {
+      "label": "Documentation",
+      "guide": "Guide",
+      "tabs": {
+        "users": "Users",
+        "developers": "Developers"
+      }
+    },
+    "search": {
+      "trigger": "Search docs…",
+      "title": "Search documentation",
+      "description": "Find a docs page",
+      "placeholder": "Search documentation…",
+      "empty": "No pages found.",
+      "groupHeading": "{section} · {group}"
+    }
+  }
+}

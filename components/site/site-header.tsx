@@ -14,20 +14,23 @@ import {
   SheetTrigger,
 } from '@/components/ui/sheet'
 import { Logo } from '@/components/site/logo'
+import { useI18n } from '@/components/i18n/i18n-provider'
+import { stripLocale } from '@/i18n/config'
 import { navItems } from '@/lib/site'
 
 export function SiteHeader() {
-  const pathname = usePathname()
+  const { m } = useI18n()
+  const pathname = stripLocale(usePathname())
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/75 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href="/" aria-label="AbstractOS home" className="rounded-md">
+        <Link href="/" aria-label={m.nav.homeLabel} className="rounded-md">
           <Logo />
         </Link>
 
-        <nav aria-label="Main" className="hidden lg:block">
+        <nav aria-label={m.nav.mainLabel} className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {navItems.map((item) => (
               <li key={item.href}>
@@ -39,7 +42,7 @@ export function SiteHeader() {
                     isActive(item.href) && 'bg-accent text-accent-foreground'
                   )}
                 >
-                  {item.label}
+                  {m.nav[item.key]}
                 </Link>
               </li>
             ))}
@@ -49,13 +52,13 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <Link href="/download" className={cn(buttonVariants({ size: 'lg' }), 'hidden rounded-full px-4 sm:inline-flex')}>
             <DownloadIcon data-icon="inline-start" />
-            Get AbstractOS
+            {m.nav.cta}
           </Link>
 
           <Sheet>
             <SheetTrigger render={<Button variant="ghost" size="icon-lg" className="lg:hidden" />}>
               <MenuIcon />
-              <span className="sr-only">Open menu</span>
+              <span className="sr-only">{m.nav.openMenu}</span>
             </SheetTrigger>
             <SheetContent side="right">
               <SheetHeader>
@@ -63,7 +66,7 @@ export function SiteHeader() {
                   <Logo />
                 </SheetTitle>
               </SheetHeader>
-              <nav aria-label="Mobile" className="px-4">
+              <nav aria-label={m.nav.mobileLabel} className="px-4">
                 <ul className="flex flex-col gap-1">
                   {navItems.map((item) => (
                     <li key={item.href}>
@@ -79,7 +82,7 @@ export function SiteHeader() {
                           />
                         }
                       >
-                        {item.label}
+                        {m.nav[item.key]}
                       </SheetClose>
                     </li>
                   ))}

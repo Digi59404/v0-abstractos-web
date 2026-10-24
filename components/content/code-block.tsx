@@ -1,6 +1,8 @@
 import { codeToHtml } from 'shiki'
 import { FileCodeIcon, TerminalIcon } from 'lucide-react'
 import { CopyButton } from '@/components/download/copy-button'
+import { format } from '@/i18n/format'
+import { getI18n } from '@/i18n/server'
 
 const SHELL_LANGS = new Set(['bash', 'sh', 'shell', 'console'])
 
@@ -40,7 +42,7 @@ export async function CodeBlock({
           <Icon className="size-3.5 shrink-0" aria-hidden="true" />
           <span className="truncate font-mono">{filename ?? lang}</span>
         </span>
-        <CopyButton value={code} label={`Copy ${filename ?? lang} code`} />
+        <CopyButton value={code} label={format(getI18n().m.content.copyCode, { name: filename ?? lang })} />
       </figcaption>
       <CodeSurface html={html} />
     </figure>

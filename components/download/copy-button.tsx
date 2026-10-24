@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { CheckIcon, CopyIcon } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { useI18n } from '@/components/i18n/i18n-provider'
 
 export function CopyButton({ value, label }: { value: string; label: string }) {
+  const { m } = useI18n()
   const [copied, setCopied] = useState(false)
 
   async function copy() {
@@ -21,7 +23,7 @@ export function CopyButton({ value, label }: { value: string; label: string }) {
     <Button variant="ghost" size="icon-xs" onClick={copy} aria-label={label}>
       {copied ? <CheckIcon /> : <CopyIcon />}
       <span className="sr-only" aria-live="polite">
-        {copied ? 'Copied' : ''}
+        {copied ? m.common.copied : ''}
       </span>
     </Button>
   )

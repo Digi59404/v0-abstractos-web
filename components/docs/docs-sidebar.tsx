@@ -3,22 +3,26 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from 'cn'
+import type { DocSectionId } from '@/lib/docs'
 import { DocIcon } from '@/components/docs/doc-icon'
+import { useI18n } from '@/components/i18n/i18n-provider'
+import { stripLocale } from '@/i18n/config'
 
 export type SidebarSection = {
-  id: string
+  id: DocSectionId
   title: string
   groups: { slug: string; title: string; icon: string; pages: { href: string; title: string }[] }[]
 }
 
 export function DocsSidebar({ sections, onNavigate }: { sections: SidebarSection[]; onNavigate?: () => void }) {
-  const pathname = usePathname()
+  const pathname = stripLocale(usePathname())
+  const { m } = useI18n()
   const activeSectionId = sections.find((s) => pathname.startsWith(`/docs/${s.id}`))?.id ?? sections[0].id
   const activeSection = sections.find((s) => s.id === activeSectionId)!
 
   return (
-    <nav aria-label="Documentation" className="flex flex-col gap-6 text-sm">
-      <div className="grid grid-cols-2 gap-1 rounded-lg bg-muted p-1" role="tablist" aria-label="Guide">
+    <nav aria-label={m.docs.sidebar.label} className="flex flex-col gap-6 text-sm">
+      <div className="grid grid-cols-2 gap-1 rounded-lg bg-muted p-1" role="tablist" aria-label={m.docs.sidebar.guide}>
         {sections.map((s) => {
           const active = s.id === activeSectionId
           return (
@@ -33,7 +37,7 @@ export function DocsSidebar({ sections, onNavigate }: { sections: SidebarSection
                 active ? 'bg-background shadow-sm' : 'text-muted-foreground hover:text-foreground'
               )}
             >
-              {s.id === 'users' ? 'Users' : 'Developers'}
+              {m.docs.sidebar.tabs[s.id]}
             </Link>
           )
         })}
@@ -49,7 +53,7 @@ export function DocsSidebar({ sections, onNavigate }: { sections: SidebarSection
             <DocIcon name={group.icon} className="size-4 text-muted-foreground" />
             {group.title}
           </Link>
-          <ul className="flex flex-col gap-0.5 border-l ml-4">
+          <ul className="flex flex-col gap-0.5 border-s ms-4">
             {group.pages.map((page) => {
               const active = pathname === page.href
               return (
@@ -59,7 +63,7 @@ export function DocsSidebar({ sections, onNavigate }: { sections: SidebarSection
                     onClick={onNavigate}
                     aria-current={active ? 'page' : undefined}
                     className={cn(
-                      '-ml-px block border-l py-1.5 pl-3 transition-colors',
+                      '-ms-px block border-s py-1.5 ps-3 transition-colors',
                       active
                         ? 'border-foreground font-medium text-foreground'
                         : 'border-transparent text-muted-foreground hover:border-border hover:text-foreground'

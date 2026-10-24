@@ -2,8 +2,10 @@
 
 import { useEffect, useId, useState } from 'react'
 import { WorkflowIcon } from 'lucide-react'
+import { useI18n } from '@/components/i18n/i18n-provider'
 
 export function Diagram({ chart, caption }: { chart: string; caption?: string }) {
+  const { m } = useI18n()
   const id = useId().replace(/:/g, '')
   const [svg, setSvg] = useState<string | null>(null)
   const [failed, setFailed] = useState(false)
@@ -56,7 +58,7 @@ export function Diagram({ chart, caption }: { chart: string; caption?: string })
           <div
             className="flex justify-center [&_svg]:h-auto [&_svg]:max-w-full"
             role="img"
-            aria-label={caption ?? 'Diagram'}
+            aria-label={caption ?? m.content.diagram.label}
             dangerouslySetInnerHTML={{ __html: svg }}
           />
         ) : failed ? (
@@ -64,7 +66,7 @@ export function Diagram({ chart, caption }: { chart: string; caption?: string })
         ) : (
           <div className="flex min-h-48 items-center justify-center gap-2 text-sm text-muted-foreground">
             <WorkflowIcon className="size-4 animate-pulse" aria-hidden="true" />
-            Rendering diagram
+            {m.content.diagram.loading}
           </div>
         )}
       </div>

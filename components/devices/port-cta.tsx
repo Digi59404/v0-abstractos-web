@@ -13,16 +13,16 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
+import { useI18n } from '@/components/i18n/i18n-provider'
 
 const PORTING_DOC = '/docs/developers/hardware/porting'
 
-const steps = [
-  { icon: MessageCircleIcon, title: 'Say hello', text: 'Join #abstractos-porting on IRC so nobody duplicates work.' },
-  { icon: CpuIcon, title: 'Create a device config', text: 'Describe the hardware in a small device.toml file.' },
-  { icon: WrenchIcon, title: 'Bring it up', text: 'Boot the kernel, then work through display, touch, radios and camera.' },
-]
+const stepIcons = [MessageCircleIcon, CpuIcon, WrenchIcon]
 
 export function PortCta() {
+  const { m } = useI18n()
+  const p = m.devices.port
+
   return (
     <section
       aria-labelledby="port-heading"
@@ -30,43 +30,41 @@ export function PortCta() {
     >
       <div className="flex max-w-xl flex-col gap-3">
         <h2 id="port-heading" className="text-3xl font-bold tracking-tight text-balance">
-          Don&apos;t see your device?
+          {p.title}
         </h2>
-        <p className="text-pretty leading-relaxed text-background/70">
-          Every supported device started with one person and a USB cable. Help bring AbstractOS to new hardware.
-        </p>
+        <p className="text-pretty leading-relaxed text-background/70">{p.description}</p>
       </div>
       <div className="flex flex-wrap gap-3">
         <Dialog>
-          <DialogTrigger render={<Button size="lg" variant="secondary" />}>Help port AbstractOS</DialogTrigger>
+          <DialogTrigger render={<Button size="lg" variant="secondary" />}>{p.cta}</DialogTrigger>
           <DialogContent className="sm:max-w-lg">
             <DialogHeader>
-              <DialogTitle>Help port AbstractOS to new hardware</DialogTitle>
-              <DialogDescription>
-                Ports are mostly a kernel and a device configuration. Everything above that is shared, so you can focus
-                on the hardware.
-              </DialogDescription>
+              <DialogTitle>{p.dialogTitle}</DialogTitle>
+              <DialogDescription>{p.dialogDescription}</DialogDescription>
             </DialogHeader>
             <ol className="flex flex-col gap-4">
-              {steps.map((s, i) => (
-                <li key={s.title} className="flex gap-3">
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
-                    <s.icon className="size-4" aria-hidden="true" />
-                  </span>
-                  <div className="flex flex-col gap-0.5">
-                    <span className="text-sm font-medium">
-                      {i + 1}. {s.title}
+              {p.steps.map((step, i) => {
+                const Icon = stepIcons[i % stepIcons.length]
+                return (
+                  <li key={step.title} className="flex gap-3">
+                    <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-accent text-accent-foreground">
+                      <Icon className="size-4" aria-hidden="true" />
                     </span>
-                    <span className="text-sm text-muted-foreground">{s.text}</span>
-                  </div>
-                </li>
-              ))}
+                    <div className="flex flex-col gap-0.5">
+                      <span className="text-sm font-medium">
+                        {i + 1}. {step.title}
+                      </span>
+                      <span className="text-sm text-muted-foreground">{step.text}</span>
+                    </div>
+                  </li>
+                )
+              })}
             </ol>
             <DialogFooter>
-              <DialogClose render={<Button variant="outline" />}>Maybe later</DialogClose>
+              <DialogClose render={<Button variant="outline" />}>{p.later}</DialogClose>
               <Button nativeButton={false} render={<Link href={PORTING_DOC} />}>
                 <BookOpenIcon data-icon="inline-start" />
-                Read the porting guide
+                {p.guide}
               </Button>
             </DialogFooter>
           </DialogContent>
@@ -78,7 +76,7 @@ export function PortCta() {
           nativeButton={false}
           render={<Link href={PORTING_DOC} />}
         >
-          Porting docs
+          {p.docs}
         </Button>
       </div>
     </section>

@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { cn } from 'cn'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
-import { formatDate, getAuthor, readingTime, type Author, type Post } from '@/lib/blog'
+import { formatDate, plural } from '@/i18n/format'
+import { getI18n } from '@/i18n/server'
+import { getAuthor, readingTime, type Author, type Post } from '@/lib/blog'
 
 const avatarTint: Record<Author['color'], string> = {
   blue: 'bg-brand-blue/20',
@@ -11,7 +13,8 @@ const avatarTint: Record<Author['color'], string> = {
 }
 
 export function AuthorAvatar({ slug, className }: { slug: string; className?: string }) {
-  const author = getAuthor(slug)
+  const { locale } = getI18n()
+  const author = getAuthor(locale, slug)
   if (!author) return null
   return (
     <Avatar className={className}>
@@ -23,7 +26,8 @@ export function AuthorAvatar({ slug, className }: { slug: string; className?: st
 }
 
 export function AuthorByline({ post, size = 'sm' }: { post: Post; size?: 'sm' | 'lg' }) {
-  const author = getAuthor(post.author)
+  const { locale, m } = getI18n()
+  const author = getAuthor(locale, post.author)
   if (!author) return null
 
   return (
@@ -34,9 +38,9 @@ export function AuthorByline({ post, size = 'sm' }: { post: Post; size?: 'sm' | 
           {author.name}
         </Link>
         <span className="text-muted-foreground">
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
+          <time dateTime={post.date}>{formatDate(locale, post.date)}</time>
           <span aria-hidden="true"> · </span>
-          {readingTime(post)} min read
+          {plural(locale, m.blog.readingTime, readingTime(post))}
         </span>
       </div>
     </div>

@@ -6,75 +6,42 @@ import {
   SparklesIcon,
   TerminalIcon,
 } from 'lucide-react'
-import { cn } from 'cn'
 import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { SectionHeading } from '@/components/site/section-heading'
+import { getI18n } from '@/i18n/server'
 
-const props = [
-  {
-    icon: MonitorSmartphoneIcon,
-    title: 'Truly convergent',
-    description:
-      'The same apps, files and settings flow between phone, tablet and desktop. Dock your phone and it becomes a full workstation.',
-    tone: 'bg-accent text-accent-foreground',
-  },
-  {
-    icon: SparklesIcon,
-    title: 'Beautiful by default',
-    description:
-      'Light, airy windows, thoughtful typography and a calm dock. No theming marathon required on day one.',
-    tone: 'bg-accent text-accent-foreground',
-  },
-  {
-    icon: LockKeyholeIcon,
-    title: 'Private by design',
-    description:
-      'Fingerprint unlock, a private-first browser in Turbine, and no telemetry you did not ask for.',
-    tone: 'bg-accent text-accent-foreground',
-  },
-  {
-    icon: SlidersHorizontalIcon,
-    title: 'Your device, your choice',
-    description:
-      'Run open or closed source software, your call. We protect your right to choose instead of choosing for you.',
-    tone: 'bg-accent text-accent-foreground',
-  },
-  {
-    icon: TerminalIcon,
-    title: 'Room for power users',
-    description:
-      'A real Linux underneath. Drop into a terminal, flash your own builds, or develop natively with Vala and GTK.',
-    tone: 'bg-accent text-accent-foreground',
-  },
-  {
-    icon: LayersIcon,
-    title: 'Apps that adapt',
-    description:
-      'Files, Turbine, Marker and the Exposition app store are designed to reflow gracefully at every size.',
-    tone: 'bg-accent text-accent-foreground',
-  },
-]
+const icons = {
+  convergent: MonitorSmartphoneIcon,
+  beautiful: SparklesIcon,
+  private: LockKeyholeIcon,
+  choice: SlidersHorizontalIcon,
+  power: TerminalIcon,
+  adapt: LayersIcon,
+} as const
 
 export function ValueProps() {
+  const { m } = getI18n()
+  const v = m.home.values
+
   return (
     <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28">
-      <SectionHeading
-        eyebrow="Why AbstractOS"
-        title="A first-class alternative, built around you"
-        description="We put the user first in every decision — while keeping the door wide open for advanced users."
-      />
+      <SectionHeading eyebrow={v.eyebrow} title={v.title} description={v.description} />
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {props.map(({ icon: Icon, title, description, tone }) => (
-          <Card key={title} className="transition-shadow hover:shadow-lg hover:shadow-brand-blue/10">
-            <CardHeader className="gap-3">
-              <div className={cn('flex size-11 items-center justify-center rounded-xl', tone)}>
-                <Icon className="size-5" aria-hidden="true" />
-              </div>
-              <CardTitle className="font-heading text-lg">{title}</CardTitle>
-              <CardDescription className="leading-relaxed">{description}</CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
+        {(Object.keys(icons) as (keyof typeof icons)[]).map((key) => {
+          const Icon = icons[key]
+          const item = v.items[key]
+          return (
+            <Card key={key} className="transition-shadow hover:shadow-lg hover:shadow-brand-blue/10">
+              <CardHeader className="gap-3">
+                <div className="flex size-11 items-center justify-center rounded-xl bg-accent text-accent-foreground">
+                  <Icon className="size-5" aria-hidden="true" />
+                </div>
+                <CardTitle className="font-heading text-lg">{item.title}</CardTitle>
+                <CardDescription className="leading-relaxed">{item.description}</CardDescription>
+              </CardHeader>
+            </Card>
+          )
+        })}
       </div>
     </section>
   )

@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import { cn } from 'cn'
 import { badgeVariants } from '@/components/ui/badge'
+import { getI18n } from '@/i18n/server'
 import { getTopic, topicColorClass } from '@/lib/blog'
 
 export function TopicBadge({ slug, active, href }: { slug: string; active?: boolean; href?: string }) {
-  const topic = getTopic(slug)
+  const topic = getTopic(getI18n().locale, slug)
   if (!topic) return null
 
   return (

@@ -14,11 +14,14 @@ import {
   CommandList,
 } from '@/components/ui/command'
 import { Kbd, KbdGroup } from '@/components/ui/kbd'
+import { useI18n } from '@/components/i18n/i18n-provider'
+import { format } from '@/i18n/format'
 import type { DocSearchEntry } from '@/lib/docs'
 
 export function DocsSearch({ entries }: { entries: DocSearchEntry[] }) {
   const [open, setOpen] = useState(false)
   const router = useRouter()
+  const { m } = useI18n()
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -32,7 +35,7 @@ export function DocsSearch({ entries }: { entries: DocSearchEntry[] }) {
   }, [])
 
   const groups = entries.reduce<Record<string, DocSearchEntry[]>>((acc, e) => {
-    const key = `${e.section} · ${e.group}`
+    const key = format(m.docs.search.groupHeading, { section: e.section, group: e.group })
     ;(acc[key] ??= []).push(e)
     return acc
   }, {})
@@ -45,17 +48,17 @@ export function DocsSearch({ entries }: { entries: DocSearchEntry[] }) {
         className="w-full justify-start text-muted-foreground sm:w-64"
       >
         <SearchIcon data-icon="inline-start" />
-        Search docs…
-        <KbdGroup className="ml-auto hidden sm:inline-flex">
-            <Kbd>Ctrl</Kbd>
-            <Kbd>K</Kbd>
+        {m.docs.search.trigger}
+        <KbdGroup className="ms-auto hidden sm:inline-flex">
+          <Kbd>Ctrl</Kbd>
+          <Kbd>K</Kbd>
         </KbdGroup>
       </Button>
-      <CommandDialog open={open} onOpenChange={setOpen} title="Search documentation" description="Find a docs page">
+      <CommandDialog open={open} onOpenChange={setOpen} title={m.docs.search.title} description={m.docs.search.description}>
         <Command>
-          <CommandInput placeholder="Search documentation…" />
+          <CommandInput placeholder={m.docs.search.placeholder} />
           <CommandList>
-            <CommandEmpty>No pages found.</CommandEmpty>
+            <CommandEmpty>{m.docs.search.empty}</CommandEmpty>
             {Object.entries(groups).map(([heading, items]) => (
               <CommandGroup key={heading} heading={heading}>
                 {items.map((item) => (

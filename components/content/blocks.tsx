@@ -8,12 +8,13 @@ import { CodeBlock } from '@/components/content/code-block'
 import { CodeTabs } from '@/components/content/code-tabs'
 import { Diagram } from '@/components/content/diagram'
 import { Inline } from '@/components/content/inline'
+import { getI18n } from '@/i18n/server'
 import { slugify, type Block } from '@/lib/content/types'
 
 const calloutStyles = {
-  note: { icon: InfoIcon, className: 'border-brand-blue/30 bg-brand-blue/5 *:[svg]:text-brand-blue', label: 'Note' },
-  tip: { icon: LightbulbIcon, className: 'border-brand-teal/40 bg-brand-teal/10 *:[svg]:text-brand-teal', label: 'Tip' },
-  warning: { icon: AlertTriangleIcon, className: 'border-brand-sun/60 bg-brand-sun/15 *:[svg]:text-foreground', label: 'Heads up' },
+  note: { icon: InfoIcon, className: 'border-brand-blue/30 bg-brand-blue/5 *:[svg]:text-brand-blue' },
+  tip: { icon: LightbulbIcon, className: 'border-brand-teal/40 bg-brand-teal/10 *:[svg]:text-brand-teal' },
+  warning: { icon: AlertTriangleIcon, className: 'border-brand-sun/60 bg-brand-sun/15 *:[svg]:text-foreground' },
 } as const
 
 function Heading({ level, text }: { level: 2 | 3; text: string }) {
@@ -99,7 +100,7 @@ function BlockView({ block }: { block: Block }) {
       return (
         <Alert className={cn('px-4 py-3', style.className)}>
           <Icon />
-          <AlertTitle>{block.title ?? style.label}</AlertTitle>
+          <AlertTitle>{block.title ?? getI18n().m.content.callout[block.tone]}</AlertTitle>
           <AlertDescription className="text-foreground/80">
             <Inline text={block.text} />
           </AlertDescription>
@@ -174,8 +175,8 @@ function BlockView({ block }: { block: Block }) {
           <Table>
             <TableHeader className="bg-muted/50">
               <TableRow>
-                <TableHead>Shortcut</TableHead>
-                <TableHead>Action</TableHead>
+                <TableHead>{getI18n().m.content.shortcut}</TableHead>
+                <TableHead>{getI18n().m.content.action}</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>

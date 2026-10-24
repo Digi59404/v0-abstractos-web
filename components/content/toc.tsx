@@ -3,9 +3,11 @@
 import { useEffect, useState } from 'react'
 import { TextAlignStartIcon } from 'lucide-react'
 import { cn } from 'cn'
+import { useI18n } from '@/components/i18n/i18n-provider'
 import type { TocItem } from '@/lib/content/types'
 
-export function TableOfContents({ items, title = 'On this page' }: { items: TocItem[]; title?: string }) {
+export function TableOfContents({ items, title }: { items: TocItem[]; title?: string }) {
+  const { m } = useI18n()
   const [active, setActive] = useState<string | null>(items[0]?.id ?? null)
 
   useEffect(() => {
@@ -27,20 +29,20 @@ export function TableOfContents({ items, title = 'On this page' }: { items: TocI
   if (items.length === 0) return null
 
   return (
-    <nav aria-label="Table of contents" className="flex flex-col gap-3">
+    <nav aria-label={m.content.toc.label} className="flex flex-col gap-3">
       <p className="flex items-center gap-2 text-sm font-semibold">
         <TextAlignStartIcon className="size-4 text-muted-foreground" aria-hidden="true" />
-        {title}
+        {title ?? m.content.toc.title}
       </p>
-      <ul className="flex flex-col border-l">
+      <ul className="flex flex-col border-s">
         {items.map((item) => (
           <li key={item.id}>
             <a
               href={`#${item.id}`}
               aria-current={active === item.id ? 'location' : undefined}
               className={cn(
-                '-ml-px block border-l-2 border-transparent py-1 text-sm text-muted-foreground transition-colors hover:text-foreground',
-                item.level === 3 ? 'pl-6' : 'pl-3',
+                '-ms-px block border-s-2 border-transparent py-1 text-sm text-muted-foreground transition-colors hover:text-foreground',
+                item.level === 3 ? 'ps-6' : 'ps-3',
                 active === item.id && 'border-primary font-medium text-foreground'
               )}
             >

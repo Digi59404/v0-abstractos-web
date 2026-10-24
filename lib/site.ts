@@ -1,17 +1,17 @@
+/** Labels live in the language pack under `nav.<key>`. */
 export const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/ethos', label: 'Ethos' },
-  { href: '/devices', label: 'Devices' },
-  { href: '/docs', label: 'Docs' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/community', label: 'Community' },
-  { href: '/download', label: 'Download' },
+  { href: '/', key: 'home' },
+  { href: '/ethos', key: 'ethos' },
+  { href: '/devices', key: 'devices' },
+  { href: '/docs', key: 'docs' },
+  { href: '/blog', key: 'blog' },
+  { href: '/community', key: 'community' },
+  { href: '/download', key: 'download' },
 ] as const
 
 export const release = {
   version: '0.1',
   codename: 'Casimir',
-  channel: 'Alpha',
 } as const
 
 export const links = {
