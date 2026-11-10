@@ -1,9 +1,19 @@
 'use client'
 
+import { Fragment } from 'react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
-import { cn } from 'cn'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { cn } from '@/lib/utils'
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import type { DocSectionId } from '@/lib/docs'
 import { DocIcon } from '@/components/docs/doc-icon'
 import { useI18n } from '@/components/i18n/i18n-provider'
@@ -18,18 +28,22 @@ export type SidebarSection = {
 export function DocsSidebar({ sections, onNavigate }: { sections: SidebarSection[]; onNavigate?: () => void }) {
   const pathname = stripLocale(usePathname())
   const { m } = useI18n()
-  const activeSectionId = sections.find((s) => pathname.startsWith(`/docs/${s.id}`))?.id ?? sections[0].id
-  const activeSection = sections.find((s) => s.id === activeSectionId)!
+  const [, , sectionSegment, groupSegment] = pathname.split('/')
+  const activeSection = sections.find((s) => s.id === sectionSegment) ?? sections[0]
+  const activeGroup = activeSection.groups.find((g) => g.slug === groupSegment) ?? activeSection.groups[0]
+  const activeValue = activeGroup ? `${activeSection.id}/${activeGroup.slug}` : null
   const router = useRouter()
-  const guideItems = sections.map((s) => ({ value: s.id, label: m.docs.sidebar.tabs[s.id] }))
+  const categoryItems = sections.flatMap((s) =>
+    s.groups.map((g) => ({ value: `${s.id}/${g.slug}`, label: `${m.docs.sidebar.tabs[s.id]} — ${g.title}` }))
+  )
 
   return (
     <nav aria-label={m.docs.sidebar.label} className="flex flex-col gap-6 text-sm">
       <Select
-        items={guideItems}
-        value={activeSectionId}
+        items={categoryItems}
+        value={activeValue}
         onValueChange={(value) => {
-          if (!value || value === activeSectionId) return
+          if (!value || value === activeValue) return
           router.push(`/docs/${value}`)
           onNavigate?.()
         }}
@@ -38,15 +52,24 @@ export function DocsSidebar({ sections, onNavigate }: { sections: SidebarSection
           <SelectValue />
         </SelectTrigger>
         <SelectContent>
-          {guideItems.map((item) => (
-            <SelectItem key={item.value} value={item.value}>
-              {item.label}
-            </SelectItem>
+          {sections.map((section, index) => (
+            <Fragment key={section.id}>
+              {index > 0 && <SelectSeparator />}
+              <SelectGroup>
+                <SelectLabel>{m.docs.sidebar.tabs[section.id]}</SelectLabel>
+                {section.groups.map((group) => (
+                  <SelectItem key={group.slug} value={`${section.id}/${group.slug}`}>
+                    <DocIcon name={group.icon} className="size-4 text-muted-foreground" />
+                    {group.title}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </Fragment>
           ))}
         </SelectContent>
       </Select>
 
-      {activeSection.groups.map((group) => (
+      {(activeGroup ? [activeGroup] : []).map((group) => (
         <div key={group.slug} className="flex flex-col gap-1">
           <Link
             href={`/docs/${activeSection.id}/${group.slug}`}
