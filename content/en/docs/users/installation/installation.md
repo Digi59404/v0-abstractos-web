@@ -30,7 +30,7 @@ Get the latest `.iso` from the [download page](/download).
 
 ### Create a USB installer
 
-Use [Disk Utility](/docs/users/disk-utility/usb-installer) or any image writer to flash the image to a USB drive of 8 GB or more.
+Use [Disk Utility](/docs/users/installation/usb-installer) or any image writer to flash the image to a USB drive of 8 GB or more.
 
 ### Boot from USB
 

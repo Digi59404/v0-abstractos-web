@@ -1,7 +1,7 @@
 ---
-title: "Getting started"
-icon: "layers"
+title: "Getting Started"
 order: 1
+icon: "rocket"
 ---
 
-Architecture and building from source.
+Understand the architecture, build your first app and ship it to Exposition.

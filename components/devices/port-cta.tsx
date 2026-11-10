@@ -15,7 +15,7 @@ import {
 } from '@/components/ui/dialog'
 import { useI18n } from '@/components/i18n/i18n-provider'
 
-const PORTING_DOC = '/docs/developers/hardware/porting'
+const PORTING_DOC = '/docs/developers/platform-porting/porting'
 
 const stepIcons = [MessageCircleIcon, CpuIcon, WrenchIcon]
 

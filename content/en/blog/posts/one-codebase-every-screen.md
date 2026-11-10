@@ -74,7 +74,7 @@ window.on_breakpoint(|bp| match bp {
 :::
 
 :::tip
-You can force a mode while developing with `abstract-ctl form-factor set tablet`. See the [SDK docs](/docs/developers/sdk/adaptive-layouts).
+You can force a mode while developing with `abstract-ctl form-factor set tablet`. See the [SDK docs](/docs/developers/abstract-ui/adaptive-layouts).
 :::
 
 ## What we learned

@@ -2,7 +2,7 @@
 title: "File picker and previews"
 description: "Open and save files through the portal and add Quick Preview support for your file type."
 updated: "2026-08-30"
-order: 1
+order: 2
 ---
 
 Sandboxed apps cannot read the file system directly. Use the file chooser portal; the user’s selection grants access to just that file.

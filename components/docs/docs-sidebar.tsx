@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { cn } from 'cn'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import type { DocSectionId } from '@/lib/docs'
 import { DocIcon } from '@/components/docs/doc-icon'
 import { useI18n } from '@/components/i18n/i18n-provider'
@@ -19,29 +20,31 @@ export function DocsSidebar({ sections, onNavigate }: { sections: SidebarSection
   const { m } = useI18n()
   const activeSectionId = sections.find((s) => pathname.startsWith(`/docs/${s.id}`))?.id ?? sections[0].id
   const activeSection = sections.find((s) => s.id === activeSectionId)!
+  const router = useRouter()
+  const guideItems = sections.map((s) => ({ value: s.id, label: m.docs.sidebar.tabs[s.id] }))
 
   return (
     <nav aria-label={m.docs.sidebar.label} className="flex flex-col gap-6 text-sm">
-      <div className="grid grid-cols-2 gap-1 rounded-lg bg-muted p-1" role="tablist" aria-label={m.docs.sidebar.guide}>
-        {sections.map((s) => {
-          const active = s.id === activeSectionId
-          return (
-            <Link
-              key={s.id}
-              href={`/docs/${s.id}`}
-              role="tab"
-              aria-selected={active}
-              onClick={onNavigate}
-              className={cn(
-                'rounded-md px-3 py-1.5 text-center font-medium transition-colors',
-                active ? 'bg-background shadow-sm' : 'text-muted-foreground hover:text-foreground'
-              )}
-            >
-              {m.docs.sidebar.tabs[s.id]}
-            </Link>
-          )
-        })}
-      </div>
+      <Select
+        items={guideItems}
+        value={activeSectionId}
+        onValueChange={(value) => {
+          if (!value || value === activeSectionId) return
+          router.push(`/docs/${value}`)
+          onNavigate?.()
+        }}
+      >
+        <SelectTrigger aria-label={m.docs.sidebar.guide} className="h-10 w-full font-medium data-[size=default]:h-10">
+          <SelectValue />
+        </SelectTrigger>
+        <SelectContent>
+          {guideItems.map((item) => (
+            <SelectItem key={item.value} value={item.value}>
+              {item.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
 
       {activeSection.groups.map((group) => (
         <div key={group.slug} className="flex flex-col gap-1">

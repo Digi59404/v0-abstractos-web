@@ -2,7 +2,7 @@
 title: "Display and scaling"
 description: "Change resolution, fractional scaling, night light and arrange multiple monitors."
 updated: "2026-10-02"
-order: 2
+order: 3
 ---
 
 AbstractOS supports fractional scaling in 25% steps on every display. Each monitor keeps its own scale so a HiDPI laptop and a standard monitor both look sharp.

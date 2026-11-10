@@ -2,7 +2,7 @@
 title: "Installing apps"
 description: "Find, install, update and remove apps with Exposition."
 updated: "2026-09-12"
-order: 1
+order: 3
 ---
 
 Exposition is the app store. Every app is sandboxed and updates in the background.

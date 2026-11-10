@@ -2,7 +2,7 @@
 title: "Adaptive layouts"
 description: "Use breakpoints and adaptive containers so one UI works on every screen."
 updated: "2026-09-30"
-order: 2
+order: 1
 ---
 
 AbstractKit containers reflow at the same breakpoints the shell uses. Prefer them over checking the form factor directly.

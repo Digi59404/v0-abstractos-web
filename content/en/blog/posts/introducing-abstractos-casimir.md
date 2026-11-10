@@ -33,7 +33,7 @@ Casimir is an alpha. It is rough in places and it will break. But it is also the
 | Phones (PinePhone Pro, Librem 5) | aarch64 | Experimental |
 
 :::warning Alpha software
-Casimir is not ready to be your daily driver. Back up your data, and try it in a virtual machine or on a spare device first. See [the install guide](/docs/users/getting-started/installing).
+Casimir is not ready to be your daily driver. Back up your data, and try it in a virtual machine or on a spare device first. See [the install guide](/docs/users/installation/installation).
 :::
 
 ## Try it today

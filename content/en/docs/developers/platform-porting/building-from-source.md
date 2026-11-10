@@ -2,7 +2,7 @@
 title: "Building from source"
 description: "Set up a development environment and build an AbstractOS image locally."
 updated: "2026-10-05"
-order: 2
+order: 1
 ---
 
 Images are built in a container so the host distribution does not matter. You need Podman or Docker and about 40 GB of free disk space.

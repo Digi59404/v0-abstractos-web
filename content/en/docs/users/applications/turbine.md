@@ -2,7 +2,7 @@
 title: "Browsing with Turbine"
 description: "Tabs, private windows, tracker blocking and syncing between devices."
 updated: "2026-08-27"
-order: 1
+order: 2
 ---
 
 Turbine is the default web browser. It blocks known trackers and third‑party cookies out of the box, with no setup required.

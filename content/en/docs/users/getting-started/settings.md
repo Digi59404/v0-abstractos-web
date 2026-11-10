@@ -2,7 +2,7 @@
 title: "Settings overview"
 description: "Find your way around the Settings app and search for any option."
 updated: "2026-10-08"
-order: 1
+order: 2
 ---
 
 Settings groups every system option into panels. On a phone, panels open full screen; on tablet and desktop the panel list stays visible on the left.

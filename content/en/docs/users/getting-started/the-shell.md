@@ -2,7 +2,7 @@
 title: "The adaptive shell"
 description: "How the AbstractOS shell changes between phone, tablet and desktop, and how to move between them."
 updated: "2026-10-10"
-order: 2
+order: 1
 ---
 
 The shell is the dock, launcher, notifications and window management. It is one program that picks a layout based on screen size and input devices.

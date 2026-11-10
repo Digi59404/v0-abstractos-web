@@ -2,7 +2,7 @@
 title: "Creating a USB installer"
 description: "Write an AbstractOS image to a USB drive with Disk Utility."
 updated: "2026-07-03"
-order: 1
+order: 2
 ---
 
 Disk Utility can write any `.iso` or `.img` file to a USB drive and verify it afterwards.

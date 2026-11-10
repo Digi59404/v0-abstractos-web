@@ -2,7 +2,7 @@
 title: "Porting to a new device"
 description: "Bring up AbstractOS on new phone, tablet or PC hardware, from kernel to shell."
 updated: "2026-10-18"
-order: 1
+order: 2
 ---
 
 A port is a **device configuration**: a kernel, a device tree and a small TOML file describing the hardware. Everything above the kernel is shared, so most ports never touch userspace.

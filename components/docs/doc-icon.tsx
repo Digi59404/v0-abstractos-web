@@ -1,5 +1,7 @@
 import {
+  AppWindowIcon,
   BookOpenIcon,
+  DownloadIcon,
   CodeIcon,
   CpuIcon,
   FolderIcon,
@@ -15,6 +17,8 @@ import {
 
 const icons: Record<string, LucideIcon> = {
   rocket: RocketIcon,
+  download: DownloadIcon,
+  'app-window': AppWindowIcon,
   settings: SettingsIcon,
   folder: FolderIcon,
   globe: GlobeIcon,

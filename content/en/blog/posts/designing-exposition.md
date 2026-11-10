@@ -28,4 +28,4 @@ Our first prototype used a carousel. It tested well on phones and poorly everywh
 
 ## Try it
 
-Exposition ships in Casimir. Learn every gesture in the [Exposition guide](/docs/users/exposition/overview).
+Exposition ships in Casimir. Learn every gesture in the [Exposition guide](/docs/users/applications/exposition).

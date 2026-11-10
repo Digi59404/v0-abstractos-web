@@ -2,7 +2,7 @@
 title: "Privacy and security"
 description: "Control which apps can use your camera, microphone, location and files."
 updated: "2026-09-28"
-order: 3
+order: 4
 ---
 
 Apps in AbstractOS run sandboxed. They ask for access the first time they need a sensitive resource, and you can change your answer at any time.

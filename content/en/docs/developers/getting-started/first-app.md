@@ -2,7 +2,7 @@
 title: "Your first app"
 description: "Create, run and package an adaptive AbstractOS app with the abstract CLI."
 updated: "2026-10-01"
-order: 1
+order: 2
 ---
 
 Apps are written with **AbstractKit**, a set of adaptive widgets on top of GTK 4. You can use Rust, Python, Vala or JavaScript.

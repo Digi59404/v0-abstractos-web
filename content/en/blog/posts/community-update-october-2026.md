@@ -21,4 +21,4 @@ What a month. Casimir shipped, the forums doubled in size, and our IRC channel h
 
 ## Get involved
 
-New here? Start with the [community page](/community) and the [contributing guide](/docs/developers/contributing/getting-started).
+New here? Start with the [community page](/community) and the [contributing guide](/docs/developers/platform-porting/building-from-source).

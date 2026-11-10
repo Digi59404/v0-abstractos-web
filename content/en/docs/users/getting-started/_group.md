@@ -1,7 +1,7 @@
 ---
-title: "Getting started"
+title: "Getting Started"
+order: 2
 icon: "rocket"
-order: 1
 ---
 
-Install AbstractOS and learn the shell.
+Learn the adaptive shell and tune settings, display and privacy to suit you.
