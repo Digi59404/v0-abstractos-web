@@ -35,7 +35,12 @@
   },
   "nav": {
     "home": "Home",
+    "about": "About",
     "ethos": "Ethos",
+    "ethosDescription": "The principles and roadmap behind AbstractOS.",
+    "arrcade": "Arrcade Inc",
+    "arrcadeDescription": "The company building AbstractOS.",
+    "opensInNewTab": "(opens in a new tab)",
     "devices": "Devices",
     "docs": "Docs",
     "blog": "Blog",
