@@ -1,13 +1,30 @@
 /** Labels live in the language pack under `nav.<key>`. */
 export type NavLink = {
   href: string
-  key: 'home' | 'forUsers' | 'forDevelopers' | 'ethos' | 'arrcade' | 'devices' | 'docs' | 'blog' | 'community'
-  descriptionKey?: 'forUsersDescription' | 'forDevelopersDescription' | 'ethosDescription' | 'arrcadeDescription'
+  key:
+    | 'home'
+    | 'forUsers'
+    | 'forDevelopers'
+    | 'docsUsers'
+    | 'docsDevelopers'
+    | 'ethos'
+    | 'arrcade'
+    | 'devices'
+    | 'blog'
+    | 'community'
+  descriptionKey?:
+    | 'forUsersDescription'
+    | 'forDevelopersDescription'
+    | 'docsUsersDescription'
+    | 'docsDevelopersDescription'
+    | 'devicesDescription'
+    | 'ethosDescription'
+    | 'arrcadeDescription'
   external?: boolean
 }
 
 export type NavGroup = {
-  key: 'features' | 'about'
+  key: 'features' | 'documentation' | 'about'
   children: NavLink[]
 }
 
@@ -27,14 +44,20 @@ export const navItems: NavItem[] = [
       { href: '/features/developers', key: 'forDevelopers', descriptionKey: 'forDevelopersDescription' },
     ],
   },
-  { href: '/devices', key: 'devices' },
-  { href: '/docs', key: 'docs' },
-  { href: '/blog', key: 'blog' },
+  {
+    key: 'documentation',
+    children: [
+      { href: '/docs/users', key: 'docsUsers', descriptionKey: 'docsUsersDescription' },
+      { href: '/docs/developers', key: 'docsDevelopers', descriptionKey: 'docsDevelopersDescription' },
+    ],
+  },
   { href: '/community', key: 'community' },
+  { href: '/blog', key: 'blog' },
   {
     key: 'about',
     children: [
       { href: '/ethos', key: 'ethos', descriptionKey: 'ethosDescription' },
+      { href: '/devices', key: 'devices', descriptionKey: 'devicesDescription' },
       { href: 'https://arrcade.com', key: 'arrcade', descriptionKey: 'arrcadeDescription', external: true },
     ],
   },
