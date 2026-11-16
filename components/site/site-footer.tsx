@@ -16,7 +16,7 @@ export function SiteFooter() {
       items: [
         { label: f.links.download, href: '/download' },
         { label: f.links.screenshots, href: '/#screenshots' },
-        { label: f.links.releaseNotes, href: links.releases },
+        { label: f.links.releases, href: '/blog/topics/releases' },
       ],
     },
     {
