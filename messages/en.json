@@ -35,17 +35,21 @@
   },
   "nav": {
     "home": "Home",
+    "features": "Features",
+    "forUsers": "For Users",
+    "forUsersDescription": "Everything AbstractOS does for the people who use it every day.",
+    "forDevelopers": "For Developers",
+    "forDevelopersDescription": "Toolkits, libraries and porting guides for building on AbstractOS.",
     "about": "About",
     "ethos": "Ethos",
     "ethosDescription": "The principles and roadmap behind AbstractOS.",
     "arrcade": "Arrcade Inc",
     "arrcadeDescription": "The company building AbstractOS.",
     "opensInNewTab": "(opens in a new tab)",
-    "devices": "Devices",
+    "devices": "Devices Supported",
     "docs": "Docs",
     "blog": "Blog",
     "community": "Community",
-    "download": "Download",
     "homeLabel": "AbstractOS home",
     "mainLabel": "Main",
     "mobileLabel": "Mobile",
@@ -63,8 +67,7 @@
       "releaseNotes": "Release notes",
       "ethos": "Our Ethos",
       "roadmap": "Roadmap",
-      "designs": "Design repository",
-      "forums": "Forums"
+      "designs": "Design repository"
     },
     "legal": "© {year} Abstract Studio. Linux is a registered trademark of Linus Torvalds.",
     "build": "AbstractOS {version} {codename} · {channel}"
@@ -176,6 +179,91 @@
       }
     }
   },
+  "features": {
+    "common": {
+      "otherAudience": "Looking for something else?",
+      "exploreOther": "Explore {name}",
+      "featuresHeading": "Features"
+    },
+    "users": {
+      "meta": {
+        "title": "Features for Users",
+        "description": "A convergent, private, user-first Linux operating system that adapts to every screen you own."
+      },
+      "eyebrow": "For Users",
+      "title": "An operating system that <accent>works for you.</accent>",
+      "description": "AbstractOS puts you in control of your devices, your software and your data — on your phone, tablet and desktop alike.",
+      "primaryCta": "Get AbstractOS",
+      "secondaryCta": "Read the user guides",
+      "sectionTitle": "Built around the people who use it",
+      "sectionDescription": "Thoughtful defaults, no lock-in, and an interface that feels at home on any screen.",
+      "items": {
+        "convergence": {
+          "title": "One OS, every screen",
+          "description": "The same apps and settings follow you from phone to tablet to desktop, adapting their layout to fit."
+        },
+        "choice": {
+          "title": "Your software, your choice",
+          "description": "Install open or closed source apps from any source you trust. We protect your right to choose."
+        },
+        "privacy": {
+          "title": "Private by default",
+          "description": "No telemetry, no ad tracking and clear permission prompts. Your data stays on your devices."
+        },
+        "apps": {
+          "title": "Core apps included",
+          "description": "Files, Settings, a browser and more ship ready to use, all designed with the same visual language."
+        },
+        "updates": {
+          "title": "Updates you control",
+          "description": "Pick your release channel and install updates when it suits you, with easy rollback if something breaks."
+        },
+        "accessibility": {
+          "title": "Accessible for everyone",
+          "description": "Screen reading, scalable text, high-contrast themes and full keyboard navigation across the system."
+        }
+      }
+    },
+    "developers": {
+      "meta": {
+        "title": "Features for Developers",
+        "description": "Build adaptive apps with Abstract UI and Abstract Lib, or port AbstractOS to new hardware."
+      },
+      "eyebrow": "For Developers",
+      "title": "Build once, <accent>run on every screen.</accent>",
+      "description": "Open toolkits, stable system APIs and documented porting guides make it straightforward to build for — and extend — AbstractOS.",
+      "primaryCta": "Read the developer docs",
+      "secondaryCta": "Browse the source",
+      "sectionTitle": "Everything you need to build",
+      "sectionDescription": "From your first app to bringing AbstractOS to a brand-new device.",
+      "items": {
+        "abstractUi": {
+          "title": "Abstract UI",
+          "description": "An adaptive widget toolkit that reflows your interface for touch, pointer and keyboard automatically."
+        },
+        "abstractLib": {
+          "title": "Abstract Lib",
+          "description": "Stable system APIs for files, notifications, settings, permissions and inter-app communication."
+        },
+        "adaptive": {
+          "title": "One codebase, every form factor",
+          "description": "Ship a single app that feels native on phones, tablets and desktops without separate builds."
+        },
+        "porting": {
+          "title": "Platform porting",
+          "description": "Documented guides and reference ports to bring AbstractOS to new phones, tablets and boards."
+        },
+        "open": {
+          "title": "Developed in the open",
+          "description": "Source code, issues, designs and roadmaps are public on GitLab. Contributions are welcome."
+        },
+        "tooling": {
+          "title": "Familiar tooling",
+          "description": "Standard Linux toolchains, a full terminal and debugging tools work out of the box."
+        }
+      }
+    }
+  },
   "ethos": {
     "meta": {
       "title": "Ethos",
@@ -273,20 +361,10 @@
           "tag": "Discussion",
           "description": "Share screenshots, show off your setup, and discuss news and releases with fellow users."
         },
-        "irc": {
-          "name": "IRC",
-          "tag": "Live chat",
-          "description": "Real-time chat with contributors and maintainers. Perfect for quick questions and dev talk."
-        },
-        "forums": {
-          "name": "Forums",
-          "tag": "Support",
-          "description": "Long-form help, feature requests and design proposals — searchable and organised by topic."
-        },
         "matrix": {
           "name": "Matrix",
           "tag": "Live chat",
-          "description": "A modern, federated chat bridged with our IRC channel. Join from any Matrix client."
+          "description": "Modern, federated real-time chat with contributors and maintainers. Join from any Matrix client."
         },
         "gitlab": {
           "name": "GitLab",

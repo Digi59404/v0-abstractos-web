@@ -31,8 +31,8 @@ export function SiteFooter() {
       title: f.community,
       items: [
         { label: 'Reddit', href: links.reddit },
-        { label: 'IRC', href: links.irc },
-        { label: f.links.forums, href: links.forums },
+        { label: 'Mastodon', href: links.mastodon },
+        { label: 'Matrix', href: links.matrix },
         { label: 'GitLab', href: links.gitlab },
       ],
     },

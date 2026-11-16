@@ -2,9 +2,7 @@ import Link from 'next/link'
 import {
   ArrowUpRightIcon,
   GitMergeIcon,
-  HashIcon,
   MessageCircleIcon,
-  MessagesSquareIcon,
   RadioTowerIcon,
 } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
@@ -15,8 +13,6 @@ import { links } from '@/lib/site'
 
 const channels = [
   { key: 'reddit', name: 'Reddit', handle: 'r/AbstractOS', href: links.reddit, icon: MessageCircleIcon },
-  { key: 'irc', name: 'IRC', handle: '#abstractos · Libera.Chat', href: links.irc, icon: HashIcon },
-  { key: 'forums', name: 'Discourse', handle: 'discourse.abstractos.org', href: links.forums, icon: MessagesSquareIcon },
   { key: 'matrix', name: 'Matrix', handle: '#abstractos:matrix.org', href: links.matrix, icon: RadioTowerIcon },
   { key: 'gitlab', name: 'GitLab', handle: 'gitlab.com/abstract', href: links.gitlab, icon: GitMergeIcon },
   { key: 'mastodon', name: 'Mastodon', handle: '@abstractos@fosstodon.org', href: links.mastodon, icon: MessageCircleIcon },
@@ -31,7 +27,7 @@ export function CommunityChannels() {
       <h2 id="channels-heading" className="sr-only">
         {c.heading}
       </h2>
-      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {channels.map((channel) => {
           const copy = c.items[channel.key]
           const Icon = channel.icon
